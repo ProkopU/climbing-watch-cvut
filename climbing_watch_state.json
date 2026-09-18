@@ -1,0 +1,134 @@
+{
+  "LEZ01": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Po",
+    "time": "08:00 - 09:30"
+  },
+  "LEZ02": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Po",
+    "time": "09:30 - 11:00"
+  },
+  "LEZ03": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Po",
+    "time": "15:00 - 16:30"
+  },
+  "LEZ04": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Po",
+    "time": "18:00 - 19:30"
+  },
+  "LEZ05": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Po",
+    "time": "19:30 - 21:00"
+  },
+  "LEZ06": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Út",
+    "time": "08:00 - 09:30"
+  },
+  "LEZ07": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Út",
+    "time": "09:30 - 11:00"
+  },
+  "LEZ08": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Út",
+    "time": "11:00 - 12:15"
+  },
+  "LEZ09": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Út",
+    "time": "12:15 - 13:30"
+  },
+  "LEZ10": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Út",
+    "time": "13:30 - 15:00"
+  },
+  "LEZ11": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Út",
+    "time": "18:00 - 19:30"
+  },
+  "LEZ12": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Út",
+    "time": "19:30 - 21:00"
+  },
+  "LEZ13": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "St",
+    "time": "09:00 - 10:30"
+  },
+  "LEZ14": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "St",
+    "time": "10:30 - 12:00"
+  },
+  "LEZ16": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "St",
+    "time": "15:00 - 16:30"
+  },
+  "LEZ17": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "St",
+    "time": "18:00 - 19:30"
+  },
+  "LEZ18": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "St",
+    "time": "19:30 - 21:00"
+  },
+  "LEZ19": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Čt",
+    "time": "08:00 - 09:30"
+  },
+  "LEZ21": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Čt",
+    "time": "09:30 - 10:45"
+  },
+  "LEZ22": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Čt",
+    "time": "10:45 - 12:00"
+  },
+  "LEZ23": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Čt",
+    "time": "12:00 - 13:15"
+  },
+  "LEZ24": {
+    "free": 0,
+    "sport": "Lezení na stěně",
+    "day": "Čt",
+    "time": "13:15 - 14:30"
+  }
+}
