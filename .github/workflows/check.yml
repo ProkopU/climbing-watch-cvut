@@ -2,6 +2,7 @@ name: Climbing Spot Watch
 
 on:
   schedule:
+    # re-registered after schedule failed to trigger for the first ~3h
     - cron: "*/5 * * * *"
   workflow_dispatch: {}
 
