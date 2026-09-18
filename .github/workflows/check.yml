@@ -2,16 +2,11 @@ name: Climbing Spot Watch
 
 on:
   schedule:
-    # re-registered after schedule failed to trigger for the first ~3h
     - cron: "*/5 * * * *"
   workflow_dispatch: {}
 
 permissions:
   contents: write
-
-concurrency:
-  group: climbing-watch
-  cancel-in-progress: false
 
 jobs:
   check:
@@ -33,5 +28,12 @@ jobs:
           git config user.name "climbing-watch-bot"
           git config user.email "actions@users.noreply.github.com"
           git add climbing_watch_state.json climbing_watch.log
-          git diff --cached --quiet || git commit -m "Update state"
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m "Update state"
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            git fetch origin main
+            git rebase origin/main
+            sleep $((RANDOM % 5 + 1))
+          done
+          exit 1
