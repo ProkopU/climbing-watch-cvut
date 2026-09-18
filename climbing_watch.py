@@ -10,13 +10,16 @@ import os
 import re
 import sys
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 URL = "https://www.utvs.cvut.cz/vyuka/povinna-volitelna?s%5B%5D=17&d=0&t=420%3B1380"
 NTFY_TOPIC = os.environ.get("NTFY_TOPIC")
+MAX_LOG_LINES = 2000
 
 BASE_DIR = Path(__file__).resolve().parent
 STATE_FILE = BASE_DIR / "climbing_watch_state.json"
+LOG_FILE = BASE_DIR / "climbing_watch.log"
 
 ROW_RE = re.compile(
     r'<td class="exp"></td>\s*'
@@ -71,6 +74,14 @@ def save_state(state: dict) -> None:
     STATE_FILE.write_text(json.dumps(state, ensure_ascii=False, indent=2))
 
 
+def log(msg: str) -> None:
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    print(msg)
+    lines = LOG_FILE.read_text().splitlines() if LOG_FILE.exists() else []
+    lines.append(f"[{ts}] {msg}")
+    LOG_FILE.write_text("\n".join(lines[-MAX_LOG_LINES:]) + "\n")
+
+
 def notify_ntfy(title: str, message: str) -> None:
     if not NTFY_TOPIC:
         print("WARNING: NTFY_TOPIC not set, skipping push notification", file=sys.stderr)
@@ -96,12 +107,12 @@ def main() -> None:
     try:
         html = fetch_html()
     except Exception as e:
-        print(f"ERROR fetching page: {e}", file=sys.stderr)
+        log(f"ERROR fetching page: {e}")
         sys.exit(1)
 
     classes = parse_classes(html)
     if not classes:
-        print("WARNING: no classes parsed - page structure may have changed", file=sys.stderr)
+        log("WARNING: no classes parsed - page structure may have changed")
         sys.exit(1)
 
     state = load_state()
@@ -120,7 +131,7 @@ def main() -> None:
     summary = f"Checked {len(classes)} classes, {total_free} free spot(s) total"
     if newly_free:
         summary += f", NEW: {len(newly_free)}"
-    print(summary)
+    log(summary)
 
     if newly_free:
         lines = [
@@ -135,7 +146,7 @@ def main() -> None:
             else f"{len(newly_free)} climbing spots opened!"
         )
         notify_ntfy(title, body)
-        print("Notification sent: " + "; ".join(lines))
+        log("Notification sent: " + "; ".join(lines))
 
 
 if __name__ == "__main__":
