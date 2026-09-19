@@ -78,8 +78,8 @@ def log(msg: str) -> None:
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     print(msg)
     lines = LOG_FILE.read_text().splitlines() if LOG_FILE.exists() else []
-    lines.append(f"[{ts}] {msg}")
-    LOG_FILE.write_text("\n".join(lines[-MAX_LOG_LINES:]) + "\n")
+    lines.insert(0, f"[{ts}] {msg}")
+    LOG_FILE.write_text("\n".join(lines[:MAX_LOG_LINES]) + "\n")
 
 
 def notify_ntfy(title: str, message: str) -> None:
