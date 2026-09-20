@@ -30,7 +30,7 @@
     "time": "19:30 - 21:00"
   },
   "LEZ06": {
-    "free": 1,
+    "free": 0,
     "sport": "Lezení na stěně",
     "day": "Út",
     "time": "08:00 - 09:30"
@@ -48,7 +48,7 @@
     "time": "11:00 - 12:15"
   },
   "LEZ09": {
-    "free": 1,
+    "free": 0,
     "sport": "Lezení na stěně",
     "day": "Út",
     "time": "12:15 - 13:30"
