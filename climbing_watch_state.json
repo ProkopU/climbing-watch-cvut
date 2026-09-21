@@ -42,7 +42,7 @@
     "time": "09:30 - 11:00"
   },
   "LEZ08": {
-    "free": 0,
+    "free": 1,
     "sport": "Lezení na stěně",
     "day": "Út",
     "time": "11:00 - 12:15"
